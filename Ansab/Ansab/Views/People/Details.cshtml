@@ -1,4 +1,4 @@
-﻿@model Ansab.Models.Person
+﻿@model Ansab.Models.PersonVM
 
 @{
     ViewBag.Title = "Details";
@@ -51,6 +51,13 @@
         </dd>
 
     </dl>
+    <ul>
+        @foreach (var parent in Model.Fathers)
+        {
+            <li>@parent.FirstName</li>
+
+        }
+    </ul>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

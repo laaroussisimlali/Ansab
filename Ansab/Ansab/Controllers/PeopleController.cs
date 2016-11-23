@@ -28,7 +28,7 @@ namespace Ansab.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.People.Find(id);
+            Person person = db.People.Include(x => x.Group.ParentGroup.ParentGroup.ParentGroup).FirstOrDefault(x => x.Id == id);
             if (person == null)
             {
                 return HttpNotFound();

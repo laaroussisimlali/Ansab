@@ -25,6 +25,7 @@ namespace Ansab
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/css/bootstrap-rtl.css",
                       "~/Content/site.css"));
         }
     }

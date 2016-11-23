@@ -18,4 +18,18 @@ namespace Ansab.Models
         [InverseProperty("Group")]
         public ICollection<Person> Roots { get; set; }
     }
+
+    [NotMapped]
+    public class GroupVM : Group
+    {
+        public GroupVM(Group group)
+        {
+            Id = group.Id;
+            Name = group.Name;
+            ParentGroupId = group.ParentGroupId;
+            ParentGroup = group.ParentGroup;
+            Groups = group.Groups;
+            Roots = group.Roots;
+        }
+    }
 }
